@@ -14,13 +14,13 @@ class CreatePositionsTable extends Migration
     public function up()
     {
         Schema::create('positions', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('position_id');
             $table->timestamps();
             $table->string('name');
             $table->integer('salary');
             $table->enum('level', ['intern', 'junior', 'mid', 'senior'])->default('mid');
             $table->text('description')->nullable();
-            $table->foreignId('division_id')->constrained('divisions')->onDelete('cascade');
+            $table->foreignId('division_position_id')->references('division_id')->on('divisions')->onDelete('cascade');
         });
     }
 

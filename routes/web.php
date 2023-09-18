@@ -51,8 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
         ->middleware('signed')
         ->name('verification.verify');
-    Route::get('/divisions', Divisions::class)->name('divisions');
+
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
 });
+
+Route::get('division', App\Http\Livewire\Divisions::class)->name('divisions');

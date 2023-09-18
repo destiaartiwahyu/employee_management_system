@@ -42,8 +42,9 @@
             </nav>
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <a href="{{ url('/') }}" class="brand-link">
-                    <img src="https://laravel.com/img/logomark.min.svg" class="brand-image">
-                    <span class="brand-text">{{ config('app.name', 'Gampangan') }}</span>
+                    <img src="{{url('logo.png')}}" class="brand-image">
+                    <span class="brand-text">EMS</span>
+                    <h6>Employee Management System</h6>
                 </a>
                 <div class="sidebar">
                     <nav class="mt-2">
@@ -76,7 +77,6 @@
             </aside>
 
             <main role="main">
-            @section('body')
                 <section class="content-wrapper">
                     <div class="content-header">
                         <div class="container-fluid">
@@ -101,9 +101,9 @@
                 </form>
             </aside>
             <footer class="main-footer">
-                <strong>Copyright &copy; 2020. {{ config('app.name', 'Gampangan') }}. All Rights Reserved.</strong>
+                <strong>Copyright &copy; 2023.Semarang. All Rights Reserved.</strong>
                 <div class="float-right d-none d-sm-inline">
-                    <small>Built with <i class="fas fa-heart text-pink"></i> <a href="https://www.gampangan.com">Azhar Fahrurazi</a></small>
+                    <small>Built with <i class="fas fa-heart text-black"></i> <a href="">Destia Arti</a></small>
                 </div>
             </footer>
         </div>
@@ -118,6 +118,8 @@
 
         <!-- Livewire -->
         <livewire:scripts/>
+
+        
 
         <!-- Turbolinks -->
         <script src="{{ mix('js/app.js') }}"></script>
