@@ -16,7 +16,7 @@ class CreatePositionUsersTable extends Migration
         Schema::create('position_users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('position_id')->constrained('positions');
+            $table->foreignId('position_user_id')->references('position_id')->on('positions');
             $table->foreignId('user_id')->constrained('users');
         });
     }
