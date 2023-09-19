@@ -50,8 +50,8 @@
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Main Menu -->
-                            <li class="{{ request()->routeIs(['home', 'divisions']) ? 'nav-item has-treeview menu-open' : 'nav-item' }}">
-                                <a href="#" class="{{ request()->routeIs(['home', 'divisions']) ? 'nav-link active' : 'nav-link' }}">
+                            <li class="{{ request()->routeIs(['home', 'divisions', 'positions']) ? 'nav-item has-treeview menu-open' : 'nav-item' }}">
+                                <a href="#" class="{{ request()->routeIs(['home', 'divisions', 'positions']) ? 'nav-link active' : 'nav-link' }}">
                                     <i class="nav-icon fas fa-home"></i>
                                     <p>Main Menu <i class="right fas fa-angle-left"></i></p>
                                 </a>
@@ -67,6 +67,12 @@
                                         <a href="{{ route('divisions') }}" class="{{ request()->routeIs('divisions') ? 'nav-link active' : 'nav-link' }}">
                                             <i class="{{ request()->routeIs('divisions') ? 'fas fa-circle nav-icon' : 'far fa-circle nav-icon' }}"></i>
                                             <p>Division</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('positions') }}" class="{{ request()->routeIs('positions') ? 'nav-link active' : 'nav-link' }}">
+                                            <i class="{{ request()->routeIs('positions') ? 'fas fa-circle nav-icon' : 'far fa-circle nav-icon' }}"></i>
+                                            <p>Position</p>
                                         </a>
                                     </li>
                                 </ul>

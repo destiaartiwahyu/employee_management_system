@@ -52,8 +52,8 @@ class Divisions extends Component
         ];
 
         $this->validate([
-            'name' => 'required',
-            'description' => 'required'
+            'name' => ['required'],
+            'description' => ['required']
         ]);
         Division::updateOrCreate(
             ['division_id' => $this->division_id],
