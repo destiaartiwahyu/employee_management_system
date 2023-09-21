@@ -14,10 +14,10 @@ class CreatePositionUsersTable extends Migration
     public function up()
     {
         Schema::create('position_users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('pivot_id');
             $table->timestamps();
-            $table->foreignId('position_user_id')->references('position_id')->on('positions');
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('position_pivot_id')->references('position_id')->on('positions');
+            $table->foreignId('user_pivot_id')->references('id')->on('users');
         });
     }
 

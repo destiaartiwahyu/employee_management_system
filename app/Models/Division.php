@@ -14,4 +14,7 @@ class Division extends Model
         'name',
         'description',
     ];
+    public function divisionHasMany(){
+        return $this->hasMany('App\Models\Positions', 'division_position_id');
+    }
 }

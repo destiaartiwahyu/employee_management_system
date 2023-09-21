@@ -42,7 +42,8 @@ class Divisions extends Component
     public function render()
     {       
         return view('livewire.divisions', [
-            'divisions' => Division::where('name', 'like', '%'.$this->searchData.'%')->paginate($this->paginatedPerPages)
+            'divisions' => Division::where('name', 'like', '%'.$this->searchData.'%')->orWhere('description', 'like', '%'.$this->searchData.'%')
+            ->paginate($this->paginatedPerPages)
         ])->extends('layouts.app');;
     }
 
@@ -52,8 +53,8 @@ class Divisions extends Component
         ];
 
         $this->validate([
-            'name' => 'required',
-            'description' => 'required'
+            'name' => ['required'],
+            'description' => ['required']
         ]);
         Division::updateOrCreate(
             ['division_id' => $this->division_id],

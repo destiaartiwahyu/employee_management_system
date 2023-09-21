@@ -15,13 +15,13 @@ class PositionUsersSeeder extends Seeder
     public function run()
     {
         DB::table('position_users')->insert([
-            'position_user_id' => 1,
-            'user_id' => 1
+            'position_pivot_id' => 1,
+            'user_pivot_id' => 1
         ]);
         for($i = 2;$i < 11;$i ++){
             DB::table('position_users')->insert([
-                'position_user_id' => $i,
-                'user_id' => $i
+                'position_pivot_id' => $i,
+                'user_pivot_id' => $i
             ]);
         }
     }
