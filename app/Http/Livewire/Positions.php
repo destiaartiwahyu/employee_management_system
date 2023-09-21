@@ -41,6 +41,8 @@ class Positions extends Component
     {       
         return view('livewire.positions', [
             'positions' => Position::where('name', 'like', '%'.$this->searchData.'%')
+            ->orWhere('level', 'like', '%'.$this->searchData.'%')
+            ->orWhere('description', 'like', '%'.$this->searchData.'%')
             ->paginate($this->paginatedPerPages),'division' => Division::get(),
         ])->extends('layouts.app');;
     }

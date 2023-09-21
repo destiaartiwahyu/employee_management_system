@@ -17,7 +17,11 @@ class Position extends Model
         'division_position_id',
         'description'
     ];
+
     public function positionBelongsTo(){
         return $this->belongsTo('App\Models\Division', 'division_position_id');
+    }
+    public function userHasMany(){
+        return $this->hasMany('App\Models\User', 'position_user_id');
     }
 }
