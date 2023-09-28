@@ -10,7 +10,7 @@ use App\Models\Division;
 class Positions extends Component
 {
     use WithPagination;
-    protected $pagination_theme = 'boostrap';
+    protected $paginationTheme = 'bootstrap';
     public $isOpen = false;
     public $paginatedPerPages = 5;
     public $searchData, $position_id, $name, $salary, $description, $division_position_id, $level;
@@ -43,8 +43,8 @@ class Positions extends Component
             'positions' => Position::where('name', 'like', '%'.$this->searchData.'%')
             ->orWhere('level', 'like', '%'.$this->searchData.'%')
             ->orWhere('description', 'like', '%'.$this->searchData.'%')
-            ->paginate($this->paginatedPerPages),'division' => Division::get(),
-        ])->extends('layouts.app');;
+            ->paginate($this->paginatedPerPages),'division' => Division::get()
+        ])->extends('layouts.app');
     }
 
     public function store(){

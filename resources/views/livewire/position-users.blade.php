@@ -57,10 +57,12 @@
                     <tr>
                         <th width="5%">No</th>
                         <th class="text-left">Name</th>
-                        <th class="text-left">Salary</th>
                         <th class="text-left">Division</th>
                         <th class="text-left">Level</th>
+                        @if(Auth::user()->role == "admin")
+                        <th class="text-left">Salary</th>
                         <th width="10%" colspan="2">Action</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -68,15 +70,17 @@
                     <tr>
                         <td>{{ $loop->iteration}}</td>
                         <td class="text-left">{{ $list->userBelongsTo->name }}</td>
-                        <td class="text-left">{{ number_format($list->positionBelongsTo->salary, 2, ",", ".") }}</td>
-                        <td class="text-left">{{ $list->positionBelongsTo->name }}</td>
+                        <td class="text-left">{{ $list->positionBelongsTo->divisionBelongsTo->name }}</td>
                         <td class="text-left">{{ $list->positionBelongsTo->level }}</td>
+                        @if(Auth::user()->role == "admin")
+                        <td class="text-left">{{ number_format($list->positionBelongsTo->salary, 2, ",", ".") }}</td>
                         <td>
                             <button wire:click="edit({{ $list->pivot_id }})" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
                         </td>
                         <td>
                             <button wire:click="delete({{ $list->pivot_id }})" class="btn btn-sm btn-danger" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>

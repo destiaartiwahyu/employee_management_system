@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PositionsSeeder::class);
         \App\Models\User::factory(10)->create();
         $this->call(PositionUsersSeeder::class);
+        \App\Models\Division::factory(10)->create();
 
     }
 }
