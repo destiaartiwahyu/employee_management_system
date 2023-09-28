@@ -1,11 +1,9 @@
 @section('title', 'Sign in to your account')
 
-<div>
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
-        </a>
-
+<div class="h-screen bg-no-repeat bg-cover bg-center" style="background-image:url('https://img.freepik.com/free-photo/flat-lay-photo-office-desk-with-laptop-copy-space-background_1150-45598.jpg?w=996&t=st=1695835524~exp=1695836124~hmac=4212cde1fdd6aac8f02e0179ca3b75747b8224cb78d3693b4278d6804b805418');">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md mt-9">
+        <img src="{{url('logo.png')}}" class="w-20 h-20 m-auto">
+        <h6  class="mt-3 text-2xl font-extrabold text-center text-green-900 leading-9">Employee Management System</h6>
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Sign in to your account
         </h2>

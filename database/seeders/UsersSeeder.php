@@ -20,7 +20,18 @@ class UsersSeeder extends Seeder
             'name' => 'admin',
             'password' => bcrypt('administrator'),
             'email_verified_at' => now(),
-            'role' => 'admin'
+            'role' => 'admin',
+            'phone_number' => 1283939,
+            'address' => 'Indonesia'
+        ]);
+        \App\Models\User::create([
+            'email' => 'user@mail.co',
+            'date_birth' => '1999-06-09',
+            'name' => 'user',
+            'password' => bcrypt('user'),
+            'email_verified_at' => now(),
+            'phone_number' => 1283939,
+            'address' => 'Indonesia'
         ]);
     }
 }

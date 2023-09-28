@@ -18,9 +18,10 @@ class Position extends Model
         'description'
     ];
 
-    public function positionBelongsTo(){
+    public function divisionBelongsTo(){
         return $this->belongsTo('App\Models\Division', 'division_position_id');
     }
+
     public function userHasMany(){
         return $this->hasMany('App\Models\User', 'position_user_id');
     }

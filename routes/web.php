@@ -8,9 +8,11 @@ use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\Users;
 use App\Http\Livewire\Divisions;
 use App\Http\Livewire\Positions;
 use App\Http\Livewire\PositionUsers;
+use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', Login::class)->name('login');
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
         ->name('login');
@@ -49,6 +51,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('home', Dashboard::class)->name('home');
+    Route::get('user', Users::class)->name('users');
     Route::get('division', Divisions::class)->name('divisions');
     Route::get('position', Positions::class)->name('positions');
     Route::get('position-user', PositionUsers::class)->name('position-users');

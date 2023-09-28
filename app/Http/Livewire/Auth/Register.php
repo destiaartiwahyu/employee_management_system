@@ -27,6 +27,9 @@ class Register extends Component
     {
         $this->validate([
             'name' => ['required'],
+            'date_birth' => ['required'],
+            'phone_number' => ['required'],
+            'address' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8', 'same:passwordConfirmation'],
         ]);
@@ -34,6 +37,9 @@ class Register extends Component
         $user = User::create([
             'email' => $this->email,
             'name' => $this->name,
+            'date_birth' => $this->date_birth,
+            'phone_number' => $this->phone_number,
+            'address' => $this->address,
             'password' => Hash::make($this->password),
         ]);
 

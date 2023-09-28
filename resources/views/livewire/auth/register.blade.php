@@ -1,11 +1,9 @@
 @section('title', 'Create a new account')
 
-<div>
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <a href="{{ route('home') }}">
-            <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
-        </a>
-
+<div  class="h-auto bg-no-repeat bg-cover bg-center" style="background-image:url('https://img.freepik.com/free-photo/flat-lay-photo-office-desk-with-laptop-copy-space-background_1150-45598.jpg?w=996&t=st=1695835524~exp=1695836124~hmac=4212cde1fdd6aac8f02e0179ca3b75747b8224cb78d3693b4278d6804b805418');">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md mt-9">
+    <img src="{{url('logo.png')}}" class="w-20 h-20 m-auto">
+        <h6  class="mt-3 text-2xl font-extrabold text-center text-green-900 leading-9">Employee Management System</h6>
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
             Create a new account
         </h2>
@@ -45,6 +43,48 @@
                     </div>
 
                     @error('email')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mt-6">
+                    <label for="phone_number" class="block text-sm font-medium text-gray-700 leading-5">
+                       Phone Number
+                    </label>
+
+                    <div class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="phone_number" id="phone_number" type="text" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    </div>
+
+                    @error('phone_number')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mt-6">
+                    <label for="address" class="block text-sm font-medium text-gray-700 leading-5">
+                       Address
+                    </label>
+
+                    <div class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="address" id="address" type="text" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    </div>
+
+                    @error('address')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mt-6">
+                    <label for="date_birth" class="block text-sm font-medium text-gray-700 leading-5">
+                       Date of birth
+                    </label>
+
+                    <div class="mt-1 rounded-md shadow-sm">
+                        <input wire:model.lazy="date_birth" id="date_birth" type="date" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:ring-red @enderror" />
+                    </div>
+
+                    @error('date_birth')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                 </div>

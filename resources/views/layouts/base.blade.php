@@ -55,9 +55,9 @@
                                             @csrf
                                         </form>
                                     @else
-                                        <a href="{{ route('login') }}" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Login</a>
+                                        <a href="{{ route('login') }}" class="px-3 py-2 rounded-md text-sm font-medium text-white">Login</a>
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white">Register</a>
+                                            <a href="{{ route('register') }}" class="px-3 py-2 rounded-md text-sm font-medium text-white">Register</a>
                                         @endif
                                     @endauth
                                 </div>

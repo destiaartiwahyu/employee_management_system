@@ -51,7 +51,9 @@
                         <th width="5%">No</th>
                         <th class="text-left">Name</th>
                         <th class="text-left">Description</th>
+                        @if(Auth::user()->role == "admin")
                         <th width="10%" colspan="2">Action</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -60,12 +62,14 @@
                         <td>{{ $loop->iteration}}</td>
                         <td class="text-left">{{ $list->name }}</td>
                         <td class="text-left">{{ $list->description }}</td>
+                        @if(Auth::user()->role == "admin")
                         <td>
                             <button wire:click="edit({{ $list->division_id }})" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
                         </td>
                         <td>
                             <button wire:click="delete({{ $list->division_id }})" class="btn btn-sm btn-danger" onclick="confirm('Are you sure to delete?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
