@@ -41,4 +41,5 @@ $ php artisan storage:link
 ![Screen Shot 2023-09-28 at 17 45 21](https://github.com/destiaartiwahyu/employee_management_system/assets/105256541/b33361d9-de23-471c-9d6f-95bd536607e8)
 ![Screen Shot 2023-09-28 at 18 29 22](https://github.com/destiaartiwahyu/employee_management_system/assets/105256541/6443271a-f150-49bc-b4c8-6cbf6149f4f4)
 ![Screen Shot 2023-09-28 at 18 29 32](https://github.com/destiaartiwahyu/employee_management_system/assets/105256541/51c167d9-2a40-468d-b71d-324e55121811)
-![Screen Shot 2023-09-28 at 17 45 06](https://github.com/destiaartiwahyu/employee_management_system/assets/105256541/90f98d28-977f-4c04-866d-e65594588945)
+![Screen Shot 2023-10-14 at 13 38 57](https://github.com/destiaartiwahyu/employee_management_system/assets/105256541/dbd7dfba-399e-4de0-91b0-a650e3e43253)
+
