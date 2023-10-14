@@ -148,8 +148,11 @@
         <!-- AdminLTE -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
 
-        <!-- Livewire -->
-        <livewire:scripts/>
+            <!-- Livewire -->
+            <livewire:scripts/>
+
+            <!-- Alert -->
+            @livewireAlertScripts
 
         
 

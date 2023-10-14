@@ -42,9 +42,11 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col-6">
-                <button wire:click="create()" class="btn btn-dark"><i class="fas fa-plus pr-1"></i> Add New</button>
-            </div>
+            @if(Auth::user()->role == "admin")
+                <div class="col-6">
+                    <button wire:click="create()" class="btn btn-dark"><i class="fas fa-plus pr-1"></i> Add New</button>
+                </div>
+            @endif
             <div class="col-6">
                 <input type="text" wire:model="searchData" placeholder="Search Something..." class="form-control">
             </div>
